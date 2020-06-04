@@ -10,7 +10,7 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.small.steps</groupId>
+	<groupId>small.steps</groupId>
 	<artifactId>first-step</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -20,4 +20,30 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
+	
+	
+  <build>
+    <plugins>
+      <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <executions>
+              <execution>
+                  <goals>
+                      <goal>repackage</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>2.2.0</version>
+        <configuration>
+          <projectId>small-steps-01</projectId>
+          <version>1</version>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
